@@ -75,14 +75,11 @@ export default function Consultation() {
     setLoading(false);
   };
   return (
-    <section id="consultation" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="consultation" className="py-14 md:py-32 relative overflow-hidden">
 
-      {/* Glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/10 blur-[80px] md:blur-[150px] rounded-full" />
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 relative z-10">
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 md:gap-16 items-center">
 
           {/* Left Content */}
           <motion.div
@@ -92,39 +89,39 @@ export default function Consultation() {
             viewport={{ once: true }}
           >
 
-            <p className="text-yellow-400 uppercase tracking-[0.3em] text-sm">
+            <p className="text-yellow-400 uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
               Consultation
             </p>
 
-            <h2 className="text-4xl md:text-6xl font-bold mt-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold mt-4 md:mt-6 leading-[1.1]">
               Start Your Recovery & Performance Journey
             </h2>
 
-            <p className="text-zinc-400 mt-8 leading-relaxed text-lg">
+            <p className="text-zinc-400 mt-4 md:mt-8 leading-relaxed text-sm sm:text-base md:text-lg">
               Book a premium consultation session focused on injury
               recovery, mobility improvement, strength development,
               and long-term performance optimization.
             </p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-6 md:mt-10 space-y-3 md:space-y-5">
 
               <div className="flex items-center gap-4">
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <p className="text-zinc-300">
+                <p className="text-zinc-300 text-sm md:text-base">
                   Personalized Recovery Plans
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <p className="text-zinc-300">
+                <p className="text-zinc-300 text-sm md:text-base">
                   Mobility & Strength Analysis
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <p className="text-zinc-300">
+                <p className="text-zinc-300 text-sm md:text-base">
                   Athlete Performance Optimization
                 </p>
               </div>
@@ -139,12 +136,12 @@ export default function Consultation() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-[40px] p-8 md:p-10"
+            className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-3xl md:rounded-[40px] p-4 md:p-10"
           >
 
             <form
               onSubmit={handleSubmit}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
 
               <div>
@@ -162,7 +159,7 @@ export default function Consultation() {
                       full_name: e.target.value,
                     })
                   }
-                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-yellow-400"
+                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400"
                 />
               </div>
 
@@ -181,7 +178,7 @@ export default function Consultation() {
                       email: e.target.value,
                     })
                   }
-                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-yellow-400"
+                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400"
                 />
               </div>
               <div>
@@ -199,7 +196,7 @@ export default function Consultation() {
                       phone: e.target.value,
                     })
                   }
-                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-yellow-400"
+                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400"
                 />
               </div>
               <div>
@@ -217,14 +214,14 @@ export default function Consultation() {
                       goals: e.target.value,
                     })
                   }
-                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-yellow-400 resize-none"
+                  className="w-full mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400 resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-yellow-400 text-black py-4 rounded-2xl font-semibold hover:scale-[1.02] transition duration-300"
+                className="w-full bg-yellow-400 text-black py-3 md:py-4 rounded-xl md:rounded-2xl text-sm md:text-base font-semibold hover:scale-[1.02] transition duration-300"
               >
                 {loading
                   ? "Submitting..."

@@ -91,7 +91,7 @@ export default function AppointmentsPage() {
 
               <div className="min-w-0">
 
-                <h2 className="text-lg md:text-2xl font-semibold break-words">
+                <h2 className="text-lg md:text-2xl font-semibold wrap-break-words">
                   {item.full_name}
                 </h2>
 
@@ -113,7 +113,7 @@ export default function AppointmentsPage() {
 
                 <div
                   className={`inline-flex px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium ${item.status === "pending"
-                      ? "bg-yellow-400/20 text-yellow-300"
+                      ? "bg-yellow-400/5 text-yellow-300"
                       : "bg-green-400/20 text-green-300"
                     }`}
                 >
@@ -130,7 +130,7 @@ export default function AppointmentsPage() {
 
             <div className="mt-4 md:mt-6 border-t border-white/10 pt-4 md:pt-6">
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed break-words">
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed wrap-break-words">
                 {item.message}
               </p>
 

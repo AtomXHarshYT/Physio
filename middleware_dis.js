@@ -50,12 +50,12 @@ export async function middleware(req) {
 
   const isLogin =
     req.nextUrl.pathname.startsWith(
-      "/login"
+      "/portal"
     );
 
   if (isDashboard && !user) {
     return NextResponse.redirect(
-      new URL("/login", req.url)
+      new URL("/portal", req.url)
     );
   }
 
@@ -71,6 +71,6 @@ export async function middleware(req) {
 export const config = {
   matcher: [
     "/dashboard/:path*",
-    "/login",
+    "/portal",
   ],
 };

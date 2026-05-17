@@ -210,7 +210,7 @@ export default function DashboardPage() {
                 <div
                   className={`inline-flex px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium ${
                     item.status === "new"
-                      ? "bg-yellow-400/20 text-yellow-300"
+                      ? "bg-yellow-400/5 text-yellow-300"
                       : item.status === "contacted"
                       ? "bg-blue-400/20 text-blue-300"
                       : "bg-green-400/20 text-green-300"
@@ -231,7 +231,7 @@ export default function DashboardPage() {
 
             <div className="mt-4 md:mt-6 border-t border-white/10 pt-4 md:pt-6">
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed break-words">
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed wrap-break-words">
                 {item.goals}
               </p>
 

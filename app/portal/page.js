@@ -37,8 +37,7 @@ export default function LoginPage() {
 
     } else {
 
-      window.location.href =
-        "/dashboard";
+      window.location.replace("/dashboard");
     }
 
     setLoading(false);

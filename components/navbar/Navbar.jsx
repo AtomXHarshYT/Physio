@@ -1,15 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 backdrop-blur-xl bg-black/30">
+  /* CLOSE MENU ON ESC */
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
 
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  /* PREVENT BODY SCROLL WHEN MENU OPEN */
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/90 backdrop-blur-md">
+
+      <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 h-20 flex items-center justify-between">
 
         {/* Logo */}
         <Link
@@ -33,45 +65,99 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Button */}
-        <button className="hidden md:block bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:scale-105 transition">
+        <a
+          href="#consultation"
+          className="hidden md:flex bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:scale-105 transition"
+        >
           Book Consultation
-        </button>
+        </a>
 
         {/* Mobile Menu Button */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1"
+          onClick={() => setMenuOpen(true)}
+          className="md:hidden flex flex-col gap-1.5"
         >
-          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-0.5 bg-white rounded-full" />
 
-          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-0.5 bg-white rounded-full" />
 
-          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-0.5 bg-white rounded-full" />
         </button>
 
       </nav>
 
-      {/* Mobile Menu */}
+      {/* MOBILE OVERLAY */}
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-xl">
+        <>
+          {/* BACKDROP */}
+          <div
+            onClick={closeMenu}
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm md:hidden"
+          />
 
-          <div className="flex flex-col px-6 py-8 gap-6 text-zinc-300">
+          {/* MOBILE MENU */}
+          <div className="fixed top-0 right-0 h-screen w-[85%] max-w-[320px] bg-[#0F0F0F] border-l border-white/10 z-50 md:hidden">
 
-            <a href="#services">Services</a>
+            {/* TOP BAR */}
+            <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
 
-            <a href="#performance">Performance</a>
+              <h2 className="text-lg font-semibold text-white">
+                Menu
+              </h2>
 
-            <a href="#testimonials">Testimonials</a>
+              {/* CLOSE BUTTON */}
+              <button
+                onClick={closeMenu}
+                className="text-3xl text-white leading-none"
+              >
+                ×
+              </button>
 
-            <a href="#consultation">Consultation</a>
+            </div>
 
-            <button className="bg-yellow-400 text-black py-3 rounded-full font-medium mt-4">
-              Book Consultation
-            </button>
+            {/* MENU LINKS */}
+            <div className="flex flex-col px-6 py-8 gap-6 text-zinc-300 text-lg">
+
+              <a
+                href="#services"
+                onClick={closeMenu}
+              >
+                Services
+              </a>
+
+              <a
+                href="#performance"
+                onClick={closeMenu}
+              >
+                Performance
+              </a>
+
+              <a
+                href="#testimonials"
+                onClick={closeMenu}
+              >
+                Testimonials
+              </a>
+
+              <a
+                href="#consultation"
+                onClick={closeMenu}
+              >
+                Consultation
+              </a>
+
+              <a
+                href="#consultation"
+                onClick={closeMenu}
+                className="bg-yellow-400 text-black py-3 rounded-full font-medium text-center mt-4"
+              >
+                Book Consultation
+              </a>
+
+            </div>
 
           </div>
-
-        </div>
+        </>
       )}
 
     </header>

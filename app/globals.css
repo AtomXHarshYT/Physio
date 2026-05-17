@@ -17,8 +17,7 @@ body {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(250, 204, 21, 0.08), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.08), transparent 25%),
+    radial-gradient(circle at top, rgba(250, 204, 21, 0.03), transparent 5%),
     #050505;
 
   color: var(--text);

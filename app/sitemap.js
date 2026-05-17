@@ -12,7 +12,7 @@ export default function sitemap() {
 
     {
       url:
-        "https://yourdomain.com/login",
+        "https://yourdomain.com/portal",
 
       lastModified:
         new Date(),

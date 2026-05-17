@@ -24,7 +24,7 @@ export default function SectionTitle({
         {title}
       </h2>
 
-      <p className="text-zinc-400 mt-6 leading-relaxed">
+      <p className="text-sm md:text-base text-zinc-400 mt-6 leading-relaxed">
         {description}
       </p>
 

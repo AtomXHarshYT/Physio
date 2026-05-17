@@ -2,9 +2,9 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
 import { Toaster } from "react-hot-toast";
+
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,39 +58,35 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  // Added for better mobile responsiveness
   maximumScale: 1,
   userScalable: true,
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}) {
+
   return (
     <html lang="en">
+
       <body className={`${inter.className} overflow-x-hidden`}>
+
         <Toaster
           position="top-right"
           toastOptions={{
             style: {
-              fontSize: '14px',
-              maxWidth: '90vw',
-            },
-            mobile: {
-              style: {
-                fontSize: '12px',
-                padding: '10px',
-              },
+              fontSize: "14px",
+              maxWidth: "90vw",
             },
           }}
         />
-        <Navbar />
 
-        <main className="min-h-screen">
+        <LayoutWrapper>
           {children}
-        </main>
-
-        <Footer />
+        </LayoutWrapper>
 
       </body>
+
     </html>
   );
 }
