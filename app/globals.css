@@ -59,3 +59,17 @@ html {
     transparent
   );
 }
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-slowZoom {
+  animation: slowZoom 10s linear infinite alternate;
+}

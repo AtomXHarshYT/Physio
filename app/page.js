@@ -10,6 +10,11 @@ import Packages from "@/components/sections/Packages";
 import Consultation from "@/components/sections/Consultation";
 import PageTransition from "@/components/animations/PageTransition";
 import Button from "@/components/ui/Button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 export const dynamic = "force-dynamic";
 export default function Home() {
@@ -18,8 +23,73 @@ export default function Home() {
       <main className="min-h-screen text-white relative overflow-hidden">
 
         {/* Hero Section */}
-        <section className="pt-40 pb-32 relative z-10">
-          <Container>
+        <section className="relative min-h-screen overflow-hidden flex items-center pt-28 md:pt-32 lg:pt-36">
+          {/* Video Slider Background */}
+          <div className="absolute inset-0 z-0">
+
+            <Swiper
+              modules={[Autoplay, EffectFade]}
+              effect="fade"
+              autoplay={{
+                delay: 6000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              className="w-full h-full"
+            >
+
+              <SwiperSlide>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover md:object-center object-[40%_center] scale-105 animate-slowZoom"
+                >
+                  <source
+                    src="/videos/hero1.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover md:object-center object-[40%_center] scale-105 animate-slowZoom"
+                >
+                  <source
+                    src="/videos/hero2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover scale-105 animate-slowZoom  "
+                >
+                  <source
+                    src="/videos/hero3.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </SwiperSlide>
+
+            </Swiper>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/50 z-10" />
+
+          </div>
+          <Container className="relative z-20">
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -61,9 +131,9 @@ export default function Home() {
                 </Button>
               </a>
               <a href="#services">
-              <Button variant="secondary">
-                Explore Services
-              </Button>
+                <Button variant="secondary">
+                  Explore Services
+                </Button>
               </a>
             </motion.div>
 
@@ -75,7 +145,7 @@ export default function Home() {
               className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-14 md:mt-20"
             >
 
-              <div className="border border-white/10 bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8">
+              <div className="border border-white/10 bg-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
                 <h2 className="text-2xl md:text-4xl font-bold text-yellow-400">
                   500+
                 </h2>
@@ -85,7 +155,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="border border-white/10 bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8">
+              <div className="border border-white/10 bg-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
                 <h2 className="text-2xl md:text-4xl font-bold text-blue-400">
                   10+
                 </h2>
