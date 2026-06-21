@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: "98%",
+    number: "95%",
     title: "Recovery Success",
   },
   {
@@ -12,7 +12,7 @@ const stats = [
     title: "Clients Trained",
   },
   {
-    number: "15+",
+    number: "12+",
     title: "Performance Programs",
   },
   {

@@ -157,7 +157,7 @@ export default function Home() {
 
               <div className="border border-white/10 bg-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
                 <h2 className="text-2xl md:text-4xl font-bold text-blue-400">
-                  10+
+                  4+
                 </h2>
 
                 <p className="text-zinc-400 text-sm md:text-base mt-1 md:mt-2">

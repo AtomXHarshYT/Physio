@@ -63,7 +63,7 @@ export default function About() {
 
               <div className="border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 bg-white/5">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400">
-                  12+
+                  5
                 </h3>
 
                 <p className="text-zinc-400 text-xs sm:text-sm md:text-base mt-1 md:mt-2">

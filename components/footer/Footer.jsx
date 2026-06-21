@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
 
             <h2 className="text-2xl md:text-3xl font-bold">
-              Physio<span className="text-yellow-400">X</span>
+              ThriveFit<span className="text-yellow-400">Club</span>
             </h2>
 
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed mt-5">
@@ -93,11 +93,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-3 text-zinc-400 text-sm md:text-base">
 
-              <p>contact@physiox.com</p>
+              <p>trainedbysunny24@gmail.com</p>
 
-              <p>+91 98765 43210</p>
+              <p>+91 97337505508</p>
 
-              <p>New York, USA</p>
+              <p>Ahmedabad, Gujarat</p>
 
             </div>
 
@@ -112,14 +112,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
           <p className="text-zinc-500 text-xs md:text-sm text-center md:text-left">
-            © 2026 PhysioX. All rights reserved.
+            © 2026 ThriveFitClub. All rights reserved.
           </p>
 
           {/* SOCIALS */}
           <div className="flex items-center gap-5 text-zinc-500 text-sm">
 
             <a
-              href="#"
+              href="https://www.instagram.com/thrivefitclub_?igsh=MXd1MXM5cGIyZmE5Nw%3D%3D&utm_source=qr"
               className="hover:text-yellow-400 transition"
             >
               Instagram
@@ -129,14 +129,7 @@ export default function Footer() {
               href="#"
               className="hover:text-yellow-400 transition"
             >
-              LinkedIn
-            </a>
-
-            <a
-              href="#"
-              className="hover:text-yellow-400 transition"
-            >
-              YouTube
+              Whatsapp
             </a>
             <a
               href="/portal"

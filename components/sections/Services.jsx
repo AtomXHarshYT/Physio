@@ -7,22 +7,22 @@ const services = [
   {
     title: "Physiotherapy",
     description:
-      "Advanced rehabilitation programs focused on pain relief and recovery.",
+      "Our Expert Physiotherapy Services are designed to help you recover from Injuries, reduce Pain, improve Mobility, and enhance Overall Physical Performance. Whether you're an Athlete, Fitness Enthusiast, or recovering from Everyday Strain, our Personalized Treatment Plans support your journey back to Strength and Confidence.",
   },
   {
     title: "Sports Rehab",
     description:
-      "Personalized recovery systems for athletes and active individuals.",
+      "Our Sports Rehabilitation Program is designed for Athletes and Active Individuals recovering from Injuries. Through Personalized Treatment, Strength Training, Mobility Exercises, and Performance-Focused Recovery Plans, we help you safely return to your Sport while reducing the risk of Future Injuries.",
   },
   {
     title: "Mobility Coaching",
     description:
-      "Improve flexibility, posture, and movement performance.",
+      "Our Mobility Coaching Program focuses on improving Flexibility, Joint Health, Movement Quality, and Overall Physical Performance. Through Personalized Assessments and Guided Exercises, we help you increase Range of Motion, reduce Stiffness, prevent Injuries, and move with greater Confidence in Daily Life and Training.",
   },
   {
     title: "Strength Training",
     description:
-      "Build strength safely with performance-focused coaching.",
+      "Develop Strength, boost Confidence, and achieve your Fitness Goals through Structured Training Programs guided by Experienced Coaches.",
   },
 ];
 

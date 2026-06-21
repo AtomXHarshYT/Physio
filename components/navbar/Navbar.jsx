@@ -48,7 +48,7 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-bold tracking-wide text-white"
         >
-          Physio<span className="text-yellow-400">X</span>
+          ThriveFit<span className="text-yellow-400">Club</span>
         </Link>
 
         {/* Desktop Menu */}

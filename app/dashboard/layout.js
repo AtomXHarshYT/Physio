@@ -63,9 +63,9 @@ export default function DashboardLayout({
         <div>
 
           <h1 className="text-3xl font-bold">
-            Physio
+            ThriveFit
             <span className="text-yellow-400">
-              X
+              Club
             </span>
           </h1>
 

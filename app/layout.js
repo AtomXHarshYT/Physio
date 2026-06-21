@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata = {
 
   title:
-    "PhysioX | Premium Physiotherapy & Recovery",
+    "ThriveFitClub | Premium Physiotherapy & Recovery",
 
   description:
     "Luxury physiotherapy and performance recovery platform focused on rehabilitation, mobility, strength, and athlete optimization.",
@@ -24,19 +24,19 @@ export const metadata = {
     "Sports Rehab",
     "Performance",
     "Mobility",
-    "PhysioX",
+    "ThriveFitClub",
   ],
 
   authors: [
     {
-      name: "PhysioX",
+      name: "ThriveFitClub",
     },
   ],
 
   openGraph: {
 
     title:
-      "PhysioX | Premium Physiotherapy & Recovery",
+      "ThriveFitClub | Premium Physiotherapy & Recovery",
 
     description:
       "Advanced physiotherapy and recovery platform for athletes and recovery-focused clients.",
@@ -45,7 +45,7 @@ export const metadata = {
       "https://yourdomain.com",
 
     siteName:
-      "PhysioX",
+      "ThriveFitClub",
 
     locale:
       "en_US",
