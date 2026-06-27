@@ -1,29 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const testimonials = [
-  {
-    name: "Rahul Sharma",
-    role: "Athlete",
-    review:
-      "The recovery and mobility coaching completely transformed my performance and reduced long-term pain.",
-  },
-  {
-    name: "Priya Mehta",
-    role: "Fitness Client",
-    review:
-      "Professional guidance, premium experience, and incredible recovery support throughout the journey.",
-  },
-  {
-    name: "Arjun Patel",
-    role: "Football Player",
-    review:
-      "One of the best rehabilitation systems I’ve experienced. Everything feels modern and personalized.",
-  },
-];
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function Testimonials() {
+
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+
+    async function fetchTestimonials() {
+
+      const { data, error } = await supabase
+        .from("testimonials")
+        .select("*")
+        .order("id", { ascending: false });
+
+      if (!error) {
+        setTestimonials(data);
+      }
+    }
+
+    fetchTestimonials();
+
+  }, []);
   return (
     <section id="testimonials" className="py-14 md:py-32 relative overflow-hidden">
 
@@ -71,7 +72,7 @@ export default function Testimonials() {
 
               {/* Stars */}
               <div className="flex gap-1 text-yellow-400 text-sm md:text-xl">
-                ★★★★★
+                {"★".repeat(item.rating || 5)}
               </div>
 
               <p className="text-[11px] sm:text-xs md:text-base text-zinc-300 mt-3 md:mt-6 leading-relaxed">

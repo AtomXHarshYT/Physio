@@ -25,6 +25,10 @@ export default function DashboardLayout({
       name: "Consultations",
       href: "/dashboard",
     },
+    {
+      name: "Testimonials",
+      href: "/dashboard/testimonials",
+    },
   ];
 
   const handleLogout = async () => {
