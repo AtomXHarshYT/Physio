@@ -1,46 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-const packages = [
-  {
-    title: "Starter Recovery",
-    price: "₹4,999",
-    features: [
-      "Mobility Assessment",
-      "Weekly Consultation",
-      "Recovery Plan",
-      "WhatsApp Support",
-    ],
-  },
-  {
-    title: "Performance Pro",
-    price: "₹9,999",
-    features: [
-      "Strength Coaching",
-      "Custom Rehab Program",
-      "Nutrition Guidance",
-      "Priority Support",
-    ],
-    featured: true,
-  },
-  {
-    title: "Elite Athlete",
-    price: "₹19,999",
-    features: [
-      "Advanced Performance Training",
-      "Injury Prevention System",
-      "Recovery Monitoring",
-      "Full Premium Support",
-    ],
-  },
-];
-
 export default function Packages() {
+  const [packages, setPackages] = useState([]);
+  useEffect(() => {
+
+    async function fetchPackages() {
+
+      const { data, error } = await supabase
+        .from("packages")
+        .select("*")
+        .order("id", { ascending: true });
+
+      if (!error) {
+        setPackages(data);
+      }
+    }
+
+    fetchPackages();
+
+  }, []);
   return (
     <section className="py-14 md:py-32 relative overflow-hidden">
 

@@ -75,14 +75,14 @@ export default function TestimonialsPage() {
   }
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">
+    <div className="px-4 sm:px-0">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
         Testimonials
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 mb-10"
+        className="space-y-3 sm:space-y-4 mb-8 sm:mb-10"
       >
         <input
           placeholder="Name"
@@ -93,7 +93,7 @@ export default function TestimonialsPage() {
               name: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-[var(--secondary)]"
+          className="w-full p-2.5 sm:p-3 rounded bg-[var(--secondary)] text-sm sm:text-base"
           required
         />
 
@@ -106,7 +106,7 @@ export default function TestimonialsPage() {
               role: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-[var(--secondary)]"
+          className="w-full p-2.5 sm:p-3 rounded bg-[var(--secondary)] text-sm sm:text-base"
           required
         />
 
@@ -119,7 +119,7 @@ export default function TestimonialsPage() {
               review: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-[var(--secondary)]"
+          className="w-full p-2.5 sm:p-3 rounded bg-[var(--secondary)] text-sm sm:text-base min-h-[100px] sm:min-h-[120px]"
           required
         />
 
@@ -131,7 +131,7 @@ export default function TestimonialsPage() {
               rating: Number(e.target.value),
             })
           }
-          className="w-full p-3 rounded bg-[var(--secondary)]"
+          className="w-full p-2.5 sm:p-3 rounded bg-[var(--secondary)] text-sm sm:text-base"
         >
           <option value={1}>1 Star</option>
           <option value={2}>2 Stars</option>
@@ -142,7 +142,7 @@ export default function TestimonialsPage() {
 
         <button
           type="submit"
-          className="bg-[var(--primary)] text-[var(--background)] px-6 py-3 rounded-xl font-semibold"
+          className="w-full sm:w-auto bg-[var(--primary)] text-[var(--background)] px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base"
         >
           {editingId
             ? "Update Testimonial"
@@ -150,34 +150,34 @@ export default function TestimonialsPage() {
         </button>
       </form>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {testimonials.map((item) => (
           <div
             key={item.id}
-            className="p-5 rounded-2xl bg-[var(--secondary)]"
+            className="p-4 sm:p-5 rounded-2xl bg-[var(--secondary)]"
           >
-            <div className="text-[var(--primary)] text-lg">
+            <div className="text-[var(--primary)] text-base sm:text-lg">
               {"★".repeat(item.rating || 5)}
             </div>
 
-            <h3 className="font-bold mt-2">
+            <h3 className="font-bold mt-2 text-sm sm:text-base">
               {item.name}
             </h3>
 
-            <p className="text-[var(--muted)]">
+            <p className="text-[var(--muted)] text-xs sm:text-sm">
               {item.role}
             </p>
 
-            <p className="mt-2">
+            <p className="mt-2 text-sm sm:text-base">
               {item.review}
             </p>
 
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4">
               <button
                 onClick={() =>
                   editTestimonial(item)
                 }
-                className="bg-blue-500 px-4 py-2 rounded-lg"
+                className="w-full sm:w-auto bg-blue-500 px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium"
               >
                 Edit
               </button>
@@ -186,7 +186,7 @@ export default function TestimonialsPage() {
                 onClick={() =>
                   deleteTestimonial(item.id)
                 }
-                className="bg-red-500 px-4 py-2 rounded-lg"
+                className="w-full sm:w-auto bg-red-500 px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium"
               >
                 Delete
               </button>

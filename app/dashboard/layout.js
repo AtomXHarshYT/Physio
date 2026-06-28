@@ -29,6 +29,18 @@ export default function DashboardLayout({
       name: "Testimonials",
       href: "/dashboard/testimonials",
     },
+    {
+      name: "Packages",
+      href: "/dashboard/packages",
+    },
+    {
+      name: "Gallery",
+      href: "/dashboard/gallery",
+    },
+    {
+      name: "Services",
+      href: "/dashboard/services",
+    },
   ];
 
   const handleLogout = async () => {
@@ -61,7 +73,7 @@ export default function DashboardLayout({
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)] flex">
 
       {/* DESKTOP SIDEBAR */}
-      <aside className="w-70 border-r border-[var(--border)] bg-black/30 backdrop-blur-xl hidden md:flex flex-col p-6">
+      <aside className="hidden md:flex fixed left-0 top-0 h-screen w-70 border-r border-[var(--border)] bg-black/30 backdrop-blur-xl flex-col p-6">
 
         {/* Logo */}
         <div>
@@ -238,7 +250,7 @@ export default function DashboardLayout({
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="flex-1 p-4 md:p-10 mt-16 md:mt-0">
+      <main className="flex-1 md:ml-70 p-4 md:p-10 mt-16 md:mt-0">
         {children}
       </main>
 

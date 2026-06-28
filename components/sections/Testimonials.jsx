@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase";
 export default function Testimonials() {
 
   const [testimonials, setTestimonials] = useState([]);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
 
@@ -25,6 +26,15 @@ export default function Testimonials() {
     fetchTestimonials();
 
   }, []);
+  useEffect(() => {
+    if (!testimonials.length) return;
+
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [testimonials]);
   return (
     <section id="testimonials" className="py-14 md:py-32 relative overflow-hidden">
 
@@ -55,7 +65,68 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-10 md:mt-20">
+        {/* Mobile Testimonials */}
+        <div className="md:hidden mt-10 relative h-[380px] px-4 py-6 flex items-center justify-center">
+
+          {testimonials.map((item, index) => {
+            const position = (index - active + testimonials.length) % testimonials.length;
+
+            if (position > 2) return null;
+
+            const styles = [
+              {
+                x: 0,
+                scale: 1,
+                opacity: 1,
+                rotateY: 0,
+                zIndex: 30,
+              },
+              {
+                x: 22,
+                scale: 0.95,
+                opacity: 0.6,
+                rotateY: -8,
+                zIndex: 20,
+              },
+              {
+                x: 44,
+                scale: 0.9,
+                opacity: 0.35,
+                rotateY: -12,
+                zIndex: 10,
+              },
+            ];
+
+            return (
+              <motion.div
+                key={item.id}
+                animate={styles[position]}
+                transition={{
+                  duration: 0.75,
+                  ease: "easeInOut",
+                }}
+                className="absolute w-[92%] rounded-3xl border border-[var(--border)] bg-white/5 backdrop-blur-xl p-6"
+              >
+                <div className="flex gap-1 text-[var(--primary)] text-lg">
+                  {"★".repeat(item.rating || 5)}
+                </div>
+
+                <p className="text-sm mt-4 leading-relaxed">
+                  "{item.review}"
+                </p>
+
+                <div className="mt-6">
+                  <h3 className="font-semibold">{item.name}</h3>
+                  <p className="text-xs text-[var(--muted)]">
+                    {item.role}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+
+        </div>
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-10 md:mt-20">
 
           {testimonials.map((item, index) => (
             <motion.div

@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Services from "@/components/sections/Services";
 import Performance from "@/components/sections/Performance";
 import About from "@/components/sections/About";
+import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Packages from "@/components/sections/Packages";
 import Consultation from "@/components/sections/Consultation";
@@ -174,6 +175,8 @@ export default function Home() {
         <Performance />
         <div className="section-divider" />
         <About />
+        <div className="section-divider" />
+        <Gallery />
         <div className="section-divider" />
         <Testimonials />
         <div className="section-divider" />

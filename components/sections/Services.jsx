@@ -1,35 +1,29 @@
 "use client";
 
-import SectionTitle from "@/components/ui/SectionTitle";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const services = [
-  {
-    title: "Physiotherapy",
-    description:
-      "Our Expert Physiotherapy Services are designed to help you recover from Injuries, reduce Pain, improve Mobility, and enhance Overall Physical Performance. Whether you're an Athlete, Fitness Enthusiast, or recovering from Everyday Strain, our Personalized Treatment Plans support your journey back to Strength and Confidence.",
-  },
-  {
-    title: "Sports Rehab",
-    description:
-      "Our Sports Rehabilitation Program is designed for Athletes and Active Individuals recovering from Injuries. Through Personalized Treatment, Strength Training, Mobility Exercises, and Performance-Focused Recovery Plans, we help you safely return to your Sport while reducing the risk of Future Injuries.",
-  },
-  {
-    title: "Mobility Coaching",
-    description:
-      "Our Mobility Coaching Program focuses on improving Flexibility, Joint Health, Movement Quality, and Overall Physical Performance. Through Personalized Assessments and Guided Exercises, we help you increase Range of Motion, reduce Stiffness, prevent Injuries, and move with greater Confidence in Daily Life and Training.",
-  },
-  {
-    title: "Strength Training",
-    description:
-      "Develop Strength, boost Confidence, and achieve your Fitness Goals through Structured Training Programs guided by Experienced Coaches.",
-  },
-];
+import { supabase } from "@/lib/supabase";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function Services() {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  async function fetchServices() {
+    const { data } = await supabase
+      .from("services")
+      .select("*")
+      .order("display_order", { ascending: true });
+
+    setServices(data || []);
+  }
+
   return (
     <section id="services" className="py-14 md:py-32 relative z-10">
-
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <SectionTitle
@@ -38,12 +32,11 @@ export default function Services() {
           description="Elite physiotherapy and performance systems designed for modern recovery and long-term body optimization."
         />
 
-        {/* Cards */}
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 mt-14 md:mt-20">
 
           {services.map((service, index) => (
             <motion.div
-              key={index}
+              key={service.id}
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -67,7 +60,6 @@ export default function Services() {
         </div>
 
       </div>
-
     </section>
   );
 }
