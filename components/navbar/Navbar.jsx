@@ -39,20 +39,20 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 w-full z-50 border-b border-[var(--border)] bg-black/40 backdrop-blur-xl">
 
       <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 h-20 flex items-center justify-between">
 
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-bold tracking-wide text-white"
+          className="text-2xl font-bold tracking-wide text-[var(--text)]"
         >
-          ThriveFit<span className="text-yellow-400">Club</span>
+          ThriveFit<span className="text-[var(--primary)]">Club</span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
+        <div className="hidden md:flex items-center gap-8 text-sm text-[var(--muted)]">
 
           <a href="#services">Services</a>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Desktop Button */}
         <a
           href="#consultation"
-          className="hidden md:flex bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:scale-105 transition"
+          className="hidden md:flex bg-[var(--primary)] text-black px-5 py-2 rounded-full text-sm font-medium hover:scale-105 transition"
         >
           Book Consultation
         </a>
@@ -77,11 +77,11 @@ export default function Navbar() {
           onClick={() => setMenuOpen(true)}
           className="md:hidden flex flex-col gap-1.5"
         >
-          <span className="w-6 h-0.5 bg-white rounded-full" />
+          <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
 
-          <span className="w-6 h-0.5 bg-white rounded-full" />
+          <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
 
-          <span className="w-6 h-0.5 bg-white rounded-full" />
+          <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
         </button>
 
       </nav>
@@ -96,19 +96,19 @@ export default function Navbar() {
           />
 
           {/* MOBILE MENU */}
-          <div className="fixed top-0 right-0 h-screen w-[85%] max-w-[320px] bg-[#0F0F0F] border-l border-white/10 z-50 md:hidden">
+          <div className="fixed top-0 right-0 h-screen w-[85%] max-w-[320px] bg-[var(--secondary)] border-l border-[var(--border)] z-50 md:hidden">
 
             {/* TOP BAR */}
-            <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
+            <div className="flex items-center justify-between px-6 h-20 border-b border-[var(--border)]">
 
-              <h2 className="text-lg font-semibold text-white">
+              <h2 className="text-lg font-semibold text-[var(--text)]">
                 Menu
               </h2>
 
               {/* CLOSE BUTTON */}
               <button
                 onClick={closeMenu}
-                className="text-3xl text-white leading-none"
+                className="text-3xl text-[var(--text)] leading-none"
               >
                 ×
               </button>
@@ -116,7 +116,7 @@ export default function Navbar() {
             </div>
 
             {/* MENU LINKS */}
-            <div className="flex flex-col px-6 py-8 gap-6 text-zinc-300 text-lg">
+            <div className="flex flex-col px-6 py-8 gap-6 text-[var(--muted)] text-lg">
 
               <a
                 href="#services"
@@ -149,7 +149,7 @@ export default function Navbar() {
               <a
                 href="#consultation"
                 onClick={closeMenu}
-                className="bg-yellow-400 text-black py-3 rounded-full font-medium text-center mt-4"
+                className="bg-[var(--primary)] text-black py-3 rounded-full font-medium text-center mt-4"
               >
                 Book Consultation
               </a>

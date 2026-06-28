@@ -52,7 +52,7 @@ export default function AppointmentsPage() {
       {/* Heading */}
       <div className="mb-6 md:mb-12">
 
-        <p className="text-yellow-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
+        <p className="text-[var(--primary)] uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
           Dashboard
         </p>
 
@@ -64,7 +64,7 @@ export default function AppointmentsPage() {
 
       {/* Loading */}
       {loading && (
-        <div className="text-zinc-400 text-sm md:text-base">
+        <div className="text-[var(--muted)] text-sm md:text-base">
           Loading appointments...
         </div>
       )}
@@ -72,7 +72,7 @@ export default function AppointmentsPage() {
       {/* Empty */}
       {!loading &&
         !appointments.length && (
-          <div className="text-zinc-400 text-sm md:text-base">
+          <div className="text-[var(--muted)] text-sm md:text-base">
             No appointments yet.
           </div>
         )}
@@ -84,7 +84,7 @@ export default function AppointmentsPage() {
 
           <div
             key={item.id}
-            className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
+            className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
           >
 
             <div className="flex flex-col md:flex-row md:justify-between gap-3 md:gap-6">
@@ -97,11 +97,11 @@ export default function AppointmentsPage() {
 
                 <div className="mt-2 md:mt-4 space-y-0.5 md:space-y-2">
 
-                  <p className="text-zinc-400 text-xs md:text-base break-all">
+                  <p className="text-[var(--muted)] text-xs md:text-base break-all">
                     {item.email}
                   </p>
 
-                  <p className="text-zinc-500 text-xs md:text-base">
+                  <p className="text-[var(--muted)] text-xs md:text-base">
                     {item.phone}
                   </p>
 
@@ -113,14 +113,14 @@ export default function AppointmentsPage() {
 
                 <div
                   className={`inline-flex px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium ${item.status === "pending"
-                      ? "bg-yellow-400/5 text-yellow-300"
+                      ? "bg-[var(--primary)]/5 text-[var(--primary)]"
                       : "bg-green-400/20 text-green-300"
                     }`}
                 >
                   {item.status}
                 </div>
 
-                <div className="text-zinc-400 text-xs md:text-sm">
+                <div className="text-[var(--muted)] text-xs md:text-sm">
                   {item.appointment_date}
                 </div>
 
@@ -128,9 +128,9 @@ export default function AppointmentsPage() {
 
             </div>
 
-            <div className="mt-4 md:mt-6 border-t border-white/10 pt-4 md:pt-6">
+            <div className="mt-4 md:mt-6 border-t border-[var(--border)] pt-4 md:pt-6">
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed wrap-break-words">
+              <p className="text-[var(--text)] text-sm md:text-base leading-relaxed wrap-break-words">
                 {item.message}
               </p>
 

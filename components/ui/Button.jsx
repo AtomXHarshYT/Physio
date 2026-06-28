@@ -4,10 +4,10 @@ export default function Button({
 }) {
   return (
     <button
-      className={`px-6 py-3 rounded-full font-medium transition duration-300 ${
+      className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
         variant === "primary"
-          ? "bg-yellow-400 text-black hover:scale-105"
-          : "border border-white/10 hover:bg-white/10 text-white"
+          ? "bg-[var(--primary)] text-black hover:scale-105"
+          : "border border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--secondary)]"
       }`}
     >
       {children}

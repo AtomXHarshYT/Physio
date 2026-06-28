@@ -39,7 +39,7 @@ export default function Testimonials() {
           className="text-center max-w-3xl mx-auto"
         >
 
-          <p className="text-yellow-400 uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
+          <p className="text-[var(--primary)] uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
             Testimonials
           </p>
 
@@ -47,7 +47,7 @@ export default function Testimonials() {
             Trusted By Athletes & Clients
           </h2>
 
-          <p className="text-[11px] sm:text-sm md:text-base text-zinc-400 mt-4 md:mt-6 leading-relaxed">
+          <p className="text-[11px] sm:text-sm md:text-base text-[var(--muted)] mt-4 md:mt-6 leading-relaxed">
             Real transformation stories from clients focused on
             recovery, mobility, rehabilitation, and performance.
           </p>
@@ -67,15 +67,15 @@ export default function Testimonials() {
                 delay: index * 0.1,
               }}
               viewport={{ once: true }}
-              className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
+              className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
             >
 
               {/* Stars */}
-              <div className="flex gap-1 text-yellow-400 text-sm md:text-xl">
+              <div className="flex gap-1 text-[var(--primary)] text-sm md:text-xl">
                 {"★".repeat(item.rating || 5)}
               </div>
 
-              <p className="text-[11px] sm:text-xs md:text-base text-zinc-300 mt-3 md:mt-6 leading-relaxed">
+              <p className="text-[11px] sm:text-xs md:text-base text-[var(--text)] mt-3 md:mt-6 leading-relaxed">
                 "{item.review}"
               </p>
 
@@ -85,7 +85,7 @@ export default function Testimonials() {
                   {item.name}
                 </h3>
 
-                <p className="text-zinc-500 text-[10px] md:text-sm mt-1">
+                <p className="text-[var(--muted)] text-[10px] md:text-sm mt-1">
                   {item.role}
                 </p>
 

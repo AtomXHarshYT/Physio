@@ -44,11 +44,11 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white flex items-center justify-center px-4 md:px-6">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--text)] flex items-center justify-center px-4 md:px-6">
 
-      <div className="w-full max-w-md border border-white/10 bg-white/5 backdrop-blur-xl rounded-3xl md:rounded-[40px] p-5 md:p-8">
+      <div className="w-full max-w-md border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-3xl md:rounded-[40px] p-5 md:p-8">
 
-        <p className="text-yellow-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
+        <p className="text-[var(--primary)] uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
           Admin Access
         </p>
 
@@ -62,7 +62,7 @@ export default function LoginPage() {
         >
 
           <div>
-            <label className="text-xs md:text-sm text-zinc-400">
+            <label className="text-xs md:text-sm text-[var(--muted)]">
               Email
             </label>
 
@@ -72,12 +72,12 @@ export default function LoginPage() {
               onChange={(e) =>
                 setEmail(e.target.value)
               }
-              className="w-full mt-1.5 md:mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400"
+              className="w-full mt-1.5 md:mt-2 bg-black/30 border border-[var(--border)] rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-[var(--primary)]"
             />
           </div>
 
           <div>
-            <label className="text-xs md:text-sm text-zinc-400">
+            <label className="text-xs md:text-sm text-[var(--muted)]">
               Password
             </label>
 
@@ -87,14 +87,14 @@ export default function LoginPage() {
               onChange={(e) =>
                 setPassword(e.target.value)
               }
-              className="w-full mt-1.5 md:mt-2 bg-black/30 border border-white/10 rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-yellow-400"
+              className="w-full mt-1.5 md:mt-2 bg-black/30 border border-[var(--border)] rounded-xl md:rounded-2xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base outline-none focus:border-[var(--primary)]"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-yellow-400 text-black py-3 md:py-4 rounded-xl md:rounded-2xl font-semibold text-sm md:text-base"
+            className="w-full bg-[var(--primary)] text-[var(--background)] py-3 md:py-4 rounded-xl md:rounded-2xl font-semibold text-sm md:text-base"
           >
             {loading
               ? "Logging in..."

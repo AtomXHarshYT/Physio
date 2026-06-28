@@ -48,17 +48,17 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8 hover:border-yellow-400/30 md:hover:-translate-y-2 hover:bg-white/[0.07] transition duration-300"
+              className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8 hover:border-[var(--primary)]/30 md:hover:-translate-y-2 hover:bg-white/[0.07] transition duration-300"
             >
-              <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-yellow-400/10 flex items-center justify-center mb-3 md:mb-6">
-                <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-yellow-400" />
+              <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center mb-3 md:mb-6">
+                <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-[var(--primary)]" />
               </div>
 
               <h3 className="text-sm sm:text-base md:text-2xl font-semibold leading-tight">
                 {service.title}
               </h3>
 
-              <p className="text-[11px] sm:text-xs md:text-base text-zinc-400 mt-2 md:mt-4 leading-relaxed">
+              <p className="text-[11px] sm:text-xs md:text-base text-[var(--muted)] mt-2 md:mt-4 leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

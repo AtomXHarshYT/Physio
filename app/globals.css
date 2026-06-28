@@ -1,34 +1,64 @@
 @import "tailwindcss";
 
+/* =========================================
+   PHYSIOX THEME
+========================================= */
+
 :root {
-  --background: #050505;
-  --secondary: #0f0f0f;
-  --text: #ffffff;
-  --muted: #a1a1aa;
-  --yellow: #facc15;
-  --blue: #3b82f6;
+  /* Brand */
+
+  --primary: #42B3F3;
+  --accent: #327098;
+
+  /* Text */
+
+  --text: #EFF4F6;
+  --muted: #737680;
+
+  /* Background */
+
+  --background: #000000;
+  --secondary: #0F0F0F;
+
+  /* Borders */
+
+  --border: rgba(255, 255, 255, 0.10);
 }
 
-body {
-  background: var(--background);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* =========================================
+   BASE
+========================================= */
 
-body {
-  background:
-    radial-gradient(circle at top, rgba(250, 204, 21, 0.03), transparent 5%),
-    #050505;
-
-  color: var(--text);
-  overflow-x: hidden;
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar - Mobile Optimized */
+body {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(66, 179, 243, 0.05),
+      transparent 35%
+    ),
+    var(--background);
+
+  color: var(--text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -41,24 +71,33 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #facc15;
+  background: var(--primary);
   border-radius: 999px;
 }
+
+/* =========================================
+   SECTION DIVIDER
+========================================= */
 
 .section-divider {
   width: 100%;
   height: 1px;
+
   background: linear-gradient(
     to right,
     transparent,
-    rgba(255,255,255,0.1),
+    var(--border),
     transparent
   );
 }
+
+/* =========================================
+   ANIMATIONS
+========================================= */
 
 @keyframes slowZoom {
   from {

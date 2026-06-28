@@ -77,6 +77,9 @@ export default function RootLayout({
             style: {
               fontSize: "14px",
               maxWidth: "90vw",
+              background: "var(--background)",
+              color: "var(--text)",
+              border: "1px solid var(--border)",
             },
           }}
         />

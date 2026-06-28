@@ -93,7 +93,7 @@ export default function TestimonialsPage() {
               name: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-zinc-900"
+          className="w-full p-3 rounded bg-[var(--secondary)]"
           required
         />
 
@@ -106,7 +106,7 @@ export default function TestimonialsPage() {
               role: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-zinc-900"
+          className="w-full p-3 rounded bg-[var(--secondary)]"
           required
         />
 
@@ -119,7 +119,7 @@ export default function TestimonialsPage() {
               review: e.target.value,
             })
           }
-          className="w-full p-3 rounded bg-zinc-900"
+          className="w-full p-3 rounded bg-[var(--secondary)]"
           required
         />
 
@@ -131,7 +131,7 @@ export default function TestimonialsPage() {
               rating: Number(e.target.value),
             })
           }
-          className="w-full p-3 rounded bg-zinc-900"
+          className="w-full p-3 rounded bg-[var(--secondary)]"
         >
           <option value={1}>1 Star</option>
           <option value={2}>2 Stars</option>
@@ -142,7 +142,7 @@ export default function TestimonialsPage() {
 
         <button
           type="submit"
-          className="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold"
+          className="bg-[var(--primary)] text-[var(--background)] px-6 py-3 rounded-xl font-semibold"
         >
           {editingId
             ? "Update Testimonial"
@@ -154,9 +154,9 @@ export default function TestimonialsPage() {
         {testimonials.map((item) => (
           <div
             key={item.id}
-            className="p-5 rounded-2xl bg-zinc-900"
+            className="p-5 rounded-2xl bg-[var(--secondary)]"
           >
-            <div className="text-yellow-400 text-lg">
+            <div className="text-[var(--primary)] text-lg">
               {"★".repeat(item.rating || 5)}
             </div>
 
@@ -164,7 +164,7 @@ export default function TestimonialsPage() {
               {item.name}
             </h3>
 
-            <p className="text-zinc-400">
+            <p className="text-[var(--muted)]">
               {item.role}
             </p>
 

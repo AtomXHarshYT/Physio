@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 mt-20 md:mt-32 bg-[#050505]">
+    <footer className="border-t border-[var(--border)] mt-20 md:mt-32 bg-[var(--background)]">
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 py-14 md:py-20">
 
@@ -11,10 +11,10 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
 
             <h2 className="text-2xl md:text-3xl font-bold">
-              ThriveFit<span className="text-yellow-400">Club</span>
+              ThriveFit<span className="text-[var(--primary)]">Club</span>
             </h2>
 
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed mt-5">
+            <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mt-5">
               Premium physiotherapy, recovery, and performance
               optimization platform built for modern athletes
               and active lifestyles.
@@ -25,36 +25,36 @@ export default function Footer() {
           {/* QUICK LINKS */}
           <div>
 
-            <h3 className="text-white font-semibold text-base md:text-lg mb-5">
+            <h3 className="text-[var(--text)] font-semibold text-base md:text-lg mb-5">
               Quick Links
             </h3>
 
-            <div className="flex flex-col gap-3 text-zinc-400 text-sm md:text-base">
+            <div className="flex flex-col gap-3 text-[var(--muted)] text-sm md:text-base">
 
               <a
                 href="#services"
-                className="hover:text-yellow-400 transition"
+                className="hover:text-[var(--primary)] transition"
               >
                 Services
               </a>
 
               <a
                 href="#performance"
-                className="hover:text-yellow-400 transition"
+                className="hover:text-[var(--primary)] transition"
               >
                 Performance
               </a>
 
               <a
                 href="#testimonials"
-                className="hover:text-yellow-400 transition"
+                className="hover:text-[var(--primary)] transition"
               >
                 Testimonials
               </a>
 
               <a
                 href="#consultation"
-                className="hover:text-yellow-400 transition"
+                className="hover:text-[var(--primary)] transition"
               >
                 Consultation
               </a>
@@ -66,11 +66,11 @@ export default function Footer() {
           {/* SERVICES */}
           <div>
 
-            <h3 className="text-white font-semibold text-base md:text-lg mb-5">
+            <h3 className="text-[var(--text)] font-semibold text-base md:text-lg mb-5">
               Services
             </h3>
 
-            <div className="flex flex-col gap-3 text-zinc-400 text-sm md:text-base">
+            <div className="flex flex-col gap-3 text-[var(--muted)] text-sm md:text-base">
 
               <p>Sports Rehabilitation</p>
 
@@ -87,11 +87,11 @@ export default function Footer() {
           {/* CONTACT */}
           <div>
 
-            <h3 className="text-white font-semibold text-base md:text-lg mb-5">
+            <h3 className="text-[var(--text)] font-semibold text-base md:text-lg mb-5">
               Contact
             </h3>
 
-            <div className="flex flex-col gap-3 text-zinc-400 text-sm md:text-base">
+            <div className="flex flex-col gap-3 text-[var(--muted)] text-sm md:text-base">
 
               <p>trainedbysunny24@gmail.com</p>
 
@@ -106,34 +106,34 @@ export default function Footer() {
         </div>
 
         {/* DIVIDER */}
-        <div className="w-full h-px bg-white/10 my-10 md:my-12" />
+        <div className="w-full h-px bg-[var(--border)] my-10 md:my-12" />
 
         {/* BOTTOM */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
-          <p className="text-zinc-500 text-xs md:text-sm text-center md:text-left">
+          <p className="text-[var(--muted)] text-xs md:text-sm text-center md:text-left">
             © 2026 ThriveFitClub. All rights reserved.
           </p>
 
           {/* SOCIALS */}
-          <div className="flex items-center gap-5 text-zinc-500 text-sm">
+          <div className="flex items-center gap-5 text-[var(--muted)] text-sm">
 
             <a
               href="https://www.instagram.com/thrivefitclub_?igsh=MXd1MXM5cGIyZmE5Nw%3D%3D&utm_source=qr"
-              className="hover:text-yellow-400 transition"
+              className="hover:text-[var(--primary)] transition"
             >
               Instagram
             </a>
 
             <a
               href="#"
-              className="hover:text-yellow-400 transition"
+              className="hover:text-[var(--primary)] transition"
             >
               Whatsapp
             </a>
             <a
               href="/portal"
-              className="hover:text-yellow-400 transition opacity-40 hover:opacity-100"
+              className="hover:text-[var(--primary)] transition opacity-40 hover:opacity-100"
             >
               Portal
             </a>

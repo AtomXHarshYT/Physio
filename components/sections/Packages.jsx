@@ -55,7 +55,7 @@ export default function Packages() {
           className="text-center max-w-3xl mx-auto"
         >
 
-          <p className="text-yellow-400 uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
+          <p className="text-[var(--primary)] uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
             Packages
           </p>
 
@@ -63,7 +63,7 @@ export default function Packages() {
             Choose Your Recovery Journey
           </h2>
 
-          <p className="text-[11px] sm:text-sm md:text-base text-zinc-400 mt-4 md:mt-6 leading-relaxed">
+          <p className="text-[11px] sm:text-sm md:text-base text-[var(--muted)] mt-4 md:mt-6 leading-relaxed">
             Flexible performance and rehabilitation programs
             tailored for recovery, strength, and long-term mobility.
           </p>
@@ -99,8 +99,8 @@ export default function Packages() {
 
                 <div
                   className={`h-full rounded-2xl p-4 border backdrop-blur-xl transition duration-500 ${item.featured
-                    ? "border-yellow-400 bg-yellow-400/10"
-                    : "border-white/10 bg-white/5"
+                    ? "border-[var(--primary)] bg-[var(--primary)]/10"
+                    : "border-[var(--border)] bg-white/5"
                     }`}
                 >
 
@@ -108,7 +108,7 @@ export default function Packages() {
                     {item.title}
                   </h3>
 
-                  <h2 className="text-3xl font-bold mt-4 text-yellow-400">
+                  <h2 className="text-3xl font-bold mt-4 text-[var(--primary)]">
                     {item.price}
                   </h2>
 
@@ -117,10 +117,10 @@ export default function Packages() {
                     {item.features.map((feature, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-2 text-zinc-300"
+                        className="flex items-start gap-2 text-[var(--text)]"
                       >
 
-                        <div className="w-2 h-2 rounded-full bg-yellow-400 mt-2" />
+                        <div className="w-2 h-2 rounded-full bg-[var(--primary)] mt-2" />
 
                         <p className="text-xs leading-relaxed">
                           {feature}
@@ -133,8 +133,8 @@ export default function Packages() {
                   <a href="#consultation">
                     <button
                       className={`w-full mt-6 py-2.5 rounded-full text-sm font-medium transition duration-300 ${item.featured
-                        ? "bg-yellow-400 text-black"
-                        : "border border-white/10 hover:bg-white/10"
+                        ? "bg-[var(--primary)] text-[var(--background)]"
+                        : "border border-[var(--border)] hover:bg-white/10"
                         }`}
                     >
                       Get Started
@@ -163,8 +163,8 @@ export default function Packages() {
               }}
               viewport={{ once: true }}
               className={`rounded-3xl p-8 border backdrop-blur-xl hover:-translate-y-3 transition duration-300 ${item.featured
-                ? "border-yellow-400 bg-yellow-400/10 scale-105"
-                : "border-white/10 bg-white/5"
+                ? "border-[var(--primary)] bg-[var(--primary)]/10 scale-105"
+                : "border-[var(--border)] bg-white/5"
                 }`}
             >
 
@@ -172,7 +172,7 @@ export default function Packages() {
                 {item.title}
               </h3>
 
-              <h2 className="text-5xl font-bold mt-6 text-yellow-400">
+              <h2 className="text-5xl font-bold mt-6 text-[var(--primary)]">
                 {item.price}
               </h2>
 
@@ -181,10 +181,10 @@ export default function Packages() {
                 {item.features.map((feature, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-3 text-zinc-300"
+                    className="flex items-start gap-3 text-[var(--text)]"
                   >
 
-                    <div className="w-2 h-2 rounded-full bg-yellow-400 mt-2" />
+                    <div className="w-2 h-2 rounded-full bg-[var(--primary)] mt-2" />
 
                     <p className="text-base leading-relaxed">
                       {feature}
@@ -197,8 +197,8 @@ export default function Packages() {
               <a href="#consultation">
                 <button
                   className={`w-full mt-10 py-3 rounded-full text-base font-medium transition duration-300 ${item.featured
-                    ? "bg-yellow-400 text-black hover:scale-105"
-                    : "border border-white/10 hover:bg-white/10"
+                    ? "bg-[var(--primary)] text-[var(--background)] hover:scale-105"
+                    : "border border-[var(--border)] hover:bg-white/10"
                     }`}
                 >
                   Get Started

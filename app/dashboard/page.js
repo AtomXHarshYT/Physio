@@ -68,7 +68,7 @@ export default function DashboardPage() {
       {/* Heading */}
       <div className="mb-6 md:mb-12">
 
-        <p className="text-yellow-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
+        <p className="text-[var(--primary)] uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm">
           Dashboard
         </p>
 
@@ -80,7 +80,7 @@ export default function DashboardPage() {
 
       {/* Loading */}
       {loading && (
-        <div className="text-zinc-400 text-sm md:text-base">
+        <div className="text-[var(--muted)] text-sm md:text-base">
           Loading consultations...
         </div>
       )}
@@ -89,25 +89,25 @@ export default function DashboardPage() {
       {!loading && (
         <div className="grid grid-cols-3 gap-2 md:gap-6 mb-6 md:mb-10">
 
-          <div className="border border-white/10 bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
+          <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
 
-            <p className="text-zinc-400 text-xs md:text-base">
+            <p className="text-[var(--muted)] text-xs md:text-base">
               Total
             </p>
 
-            <h2 className="text-xl md:text-5xl font-bold mt-1 md:mt-4 text-yellow-400">
+            <h2 className="text-xl md:text-5xl font-bold mt-1 md:mt-4 text-[var(--primary)]">
               {consultations.length}
             </h2>
 
           </div>
 
-          <div className="border border-white/10 bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
+          <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
 
-            <p className="text-zinc-400 text-xs md:text-base">
+            <p className="text-[var(--muted)] text-xs md:text-base">
               New Leads
             </p>
 
-            <h2 className="text-xl md:text-5xl font-bold mt-1 md:mt-4 text-blue-400">
+            <h2 className="text-xl md:text-5xl font-bold mt-1 md:mt-4 text-[var(--accent)]">
 
               {
                 consultations.filter(
@@ -119,9 +119,9 @@ export default function DashboardPage() {
 
           </div>
 
-          <div className="border border-white/10 bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
+          <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-3 md:p-6">
 
-            <p className="text-zinc-400 text-xs md:text-base">
+            <p className="text-[var(--muted)] text-xs md:text-base">
               Completed
             </p>
 
@@ -156,8 +156,8 @@ export default function DashboardPage() {
             onClick={() => setFilter(item)}
             className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full border transition text-xs md:text-sm ${
               filter === item
-                ? "bg-yellow-400 text-black border-yellow-400"
-                : "border-white/10 text-white hover:bg-white/10"
+                ? "bg-[var(--primary)] text-[var(--background)] border-[var(--primary)]"
+                : "border-[var(--border)] text-[var(--text)] hover:bg-white/10"
             }`}
           >
             {item}
@@ -180,7 +180,7 @@ export default function DashboardPage() {
 
           <div
             key={item.id}
-            className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
+            className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
           >
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
@@ -193,11 +193,11 @@ export default function DashboardPage() {
 
                 <div className="mt-2 md:mt-3 space-y-0.5 md:space-y-1">
 
-                  <p className="text-zinc-400 text-xs md:text-base break-all">
+                  <p className="text-[var(--muted)] text-xs md:text-base break-all">
                     {item.email}
                   </p>
 
-                  <p className="text-zinc-500 text-xs md:text-base">
+                  <p className="text-[var(--muted)] text-xs md:text-base">
                     {item.phone}
                   </p>
 
@@ -210,16 +210,16 @@ export default function DashboardPage() {
                 <div
                   className={`inline-flex px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium ${
                     item.status === "new"
-                      ? "bg-yellow-400/5 text-yellow-300"
+                      ? "bg-[var(--primary)]/5 text-[var(--primary)]"
                       : item.status === "contacted"
-                      ? "bg-blue-400/20 text-blue-300"
+                      ? "bg-[var(--accent)]/20 text-[var(--accent)]"
                       : "bg-green-400/20 text-green-300"
                   }`}
                 >
                   {item.status}
                 </div>
 
-                <div className="text-xs md:text-sm text-zinc-500">
+                <div className="text-xs md:text-sm text-[var(--muted)]">
                   {new Date(
                     item.created_at
                   ).toLocaleString()}
@@ -229,9 +229,9 @@ export default function DashboardPage() {
 
             </div>
 
-            <div className="mt-4 md:mt-6 border-t border-white/10 pt-4 md:pt-6">
+            <div className="mt-4 md:mt-6 border-t border-[var(--border)] pt-4 md:pt-6">
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed wrap-break-words">
+              <p className="text-[var(--text)] text-sm md:text-base leading-relaxed wrap-break-words">
                 {item.goals}
               </p>
 
@@ -246,7 +246,7 @@ export default function DashboardPage() {
                     "contacted"
                   )
                 }
-                className="border border-blue-500/30 text-blue-400 px-3 md:px-5 py-1.5 md:py-2 rounded-full hover:bg-blue-500/10 transition text-xs md:text-sm"
+                className="border border-[var(--accent)]/30 text-[var(--accent)] px-3 md:px-5 py-1.5 md:py-2 rounded-full hover:bg-[var(--accent)]/10 transition text-xs md:text-sm"
               >
                 Mark Contacted
               </button>

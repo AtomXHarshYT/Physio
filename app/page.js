@@ -20,7 +20,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <PageTransition>
-      <main className="min-h-screen text-white relative overflow-hidden">
+      <main className="min-h-screen text-[var(--text)] relative overflow-hidden">
 
         {/* Hero Section */}
         <section className="relative min-h-screen overflow-hidden flex items-center pt-28 md:pt-32 lg:pt-36">
@@ -95,7 +95,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-yellow-400 uppercase tracking-[0.3em] text-sm mb-6"
+              className="text-[var(--primary)] uppercase tracking-[0.3em] text-sm mb-6"
             >
               Elite Recovery & Performance
             </motion.p>
@@ -113,7 +113,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-zinc-400 text-lg mt-8 max-w-2xl leading-relaxed"
+              className="text-[var(--muted)] text-lg mt-8 max-w-2xl leading-relaxed"
             >
               Premium sports rehab, mobility coaching, injury recovery,
               and performance optimization built for modern athletes.
@@ -145,22 +145,22 @@ export default function Home() {
               className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-14 md:mt-20"
             >
 
-              <div className="border border-white/10 bg-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
-                <h2 className="text-2xl md:text-4xl font-bold text-yellow-400">
+              <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
+                <h2 className="text-2xl md:text-4xl font-bold text-[var(--primary)]">
                   500+
                 </h2>
 
-                <p className="text-zinc-400 text-sm md:text-base mt-1 md:mt-2">
+                <p className="text-[var(--muted)] text-sm md:text-base mt-1 md:mt-2">
                   Successful Recoveries
                 </p>
               </div>
 
-              <div className="border border-white/10 bg-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
-                <h2 className="text-2xl md:text-4xl font-bold text-blue-400">
+              <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
+                <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
                   4+
                 </h2>
 
-                <p className="text-zinc-400 text-sm md:text-base mt-1 md:mt-2">
+                <p className="text-[var(--muted)] text-sm md:text-base mt-1 md:mt-2">
                   Years Experience
                 </p>
               </div>

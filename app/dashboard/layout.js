@@ -58,22 +58,22 @@ export default function DashboardLayout({
   }, [sidebarOpen]);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--text)] flex">
 
       {/* DESKTOP SIDEBAR */}
-      <aside className="w-70 border-r border-white/10 bg-black/30 backdrop-blur-xl hidden md:flex flex-col p-6">
+      <aside className="w-70 border-r border-[var(--border)] bg-black/30 backdrop-blur-xl hidden md:flex flex-col p-6">
 
         {/* Logo */}
         <div>
 
           <h1 className="text-3xl font-bold">
             ThriveFit
-            <span className="text-yellow-400">
+            <span className="text-[var(--primary)]">
               Club
             </span>
           </h1>
 
-          <p className="text-zinc-500 mt-2 text-sm">
+          <p className="text-[var(--muted)] mt-2 text-sm">
             Admin Dashboard
           </p>
 
@@ -88,8 +88,8 @@ export default function DashboardLayout({
               key={item.href}
               href={item.href}
               className={`px-5 py-3 rounded-2xl transition ${pathname === item.href
-                ? "bg-yellow-400 text-black"
-                : "hover:bg-white/10 text-zinc-300"
+                ? "bg-[var(--primary)] text-[var(--background)]"
+                : "hover:bg-[var(--text)]/10 text-[var(--text)]"
                 }`}
             >
               {item.name}
@@ -102,7 +102,7 @@ export default function DashboardLayout({
         {/* Logout */}
         <button
           onClick={handleLogout}
-          className="mt-auto bg-yellow-400 text-black py-3 rounded-2xl font-semibold"
+          className="mt-auto bg-[var(--primary)] text-[var(--background)] py-3 rounded-2xl font-semibold"
         >
           Logout
         </button>
@@ -110,7 +110,7 @@ export default function DashboardLayout({
       </aside>
 
       {/* MOBILE TOPBAR */}
-      <div className="md:hidden fixed top-0 left-0 w-full h-16 border-b border-white/10 bg-black/80 backdrop-blur-xl z-50">
+      <div className="md:hidden fixed top-0 left-0 w-full h-16 border-b border-[var(--border)] bg-black/80 backdrop-blur-xl z-50">
 
         <div className="h-full px-4 flex items-center justify-between">
 
@@ -122,18 +122,18 @@ export default function DashboardLayout({
             className="flex flex-col gap-1.5"
           >
 
-            <span className="w-6 h-0.5 bg-white rounded-full" />
+            <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
 
-            <span className="w-6 h-0.5 bg-white rounded-full" />
+            <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
 
-            <span className="w-6 h-0.5 bg-white rounded-full" />
+            <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
 
           </button>
 
           {/* LOGO */}
           <h1 className="text-xl font-bold">
             Physio
-            <span className="text-yellow-400">
+            <span className="text-[var(--primary)]">
               X
             </span>
           </h1>
@@ -141,7 +141,7 @@ export default function DashboardLayout({
           {/* LOGOUT */}
           <button
             onClick={handleLogout}
-            className="bg-yellow-400 text-black px-3 py-1.5 rounded-full text-xs font-medium"
+            className="bg-[var(--primary)] text-[var(--background)] px-3 py-1.5 rounded-full text-xs font-medium"
           >
             Logout
           </button>
@@ -164,7 +164,7 @@ export default function DashboardLayout({
 
       {/* MOBILE SIDEBAR */}
       <aside
-        className={`fixed top-0 left-0 h-screen w-70 bg-[#0F0F0F] border-r border-white/10 z-50 transform transition duration-300 md:hidden ${sidebarOpen
+        className={`fixed top-0 left-0 h-screen w-70 bg-[var(--secondary)] border-r border-[var(--border)] z-50 transform transition duration-300 md:hidden ${sidebarOpen
           ? "translate-x-0"
           : "-translate-x-full"
           }`}
@@ -179,12 +179,12 @@ export default function DashboardLayout({
 
               <h1 className="text-3xl font-bold">
                 Physio
-                <span className="text-yellow-400">
+                <span className="text-[var(--primary)]">
                   X
                 </span>
               </h1>
 
-              <p className="text-zinc-500 mt-2 text-sm">
+              <p className="text-[var(--muted)] mt-2 text-sm">
                 Admin Dashboard
               </p>
 
@@ -195,7 +195,7 @@ export default function DashboardLayout({
               onClick={() =>
                 setSidebarOpen(false)
               }
-              className="text-3xl text-white"
+              className="text-3xl text-[var(--text)]"
             >
               ×
             </button>
@@ -214,8 +214,8 @@ export default function DashboardLayout({
                   setSidebarOpen(false)
                 }
                 className={`px-5 py-3 rounded-2xl transition ${pathname === item.href
-                  ? "bg-yellow-400 text-black"
-                  : "hover:bg-white/10 text-zinc-300"
+                  ? "bg-[var(--primary)] text-[var(--background)]"
+                  : "hover:bg-[var(--text)]/10 text-[var(--text)]"
                   }`}
               >
                 {item.name}
@@ -228,7 +228,7 @@ export default function DashboardLayout({
           {/* LOGOUT */}
           <button
             onClick={handleLogout}
-            className="mt-auto bg-yellow-400 text-black py-3 rounded-2xl font-semibold"
+            className="mt-auto bg-[var(--primary)] text-[var(--background)] py-3 rounded-2xl font-semibold"
           >
             Logout
           </button>
