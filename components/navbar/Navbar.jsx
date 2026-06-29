@@ -42,9 +42,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-b border-[var(--border)] bg-black/40 backdrop-blur-xl">
-
       <nav className="w-full px-2 md:px-4 h-20 flex items-center justify-between">
-
         {/* Logo */}
         <Link
           href="/"
@@ -58,7 +56,6 @@ export default function Navbar() {
             className="object-contain"
             priority
           />
-
           <h1 className="text-2xl font-bold tracking-wide text-[var(--text)]">
             ThriveFit<span className="text-[var(--primary)]">Club</span>
           </h1>
@@ -66,15 +63,30 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm text-[var(--muted)]">
-
-          <a href="#services" className="transition-colors duration-300 hover:text-[var(--primary)]">Services</a>
-
-          <a href="#performance" className="transition-colors duration-300 hover:text-[var(--primary)]">Performance</a>
-
-          <a href="#testimonials" className="transition-colors duration-300 hover:text-[var(--primary)]">Testimonials</a>
-
-          <a href="#consultation" className="transition-colors duration-300 hover:text-[var(--primary)]">Consultation</a>
-
+          <a 
+            href="#services" 
+            className="relative inline-block transition-all duration-300 hover:text-[var(--primary)] hover:scale-110 hover:rotate-[-2deg] hover:translate-y-[-2px] [transform-style:preserve-3d] perspective-[800px]"
+          >
+            Services
+          </a>
+          <a 
+            href="#performance" 
+            className="relative inline-block transition-all duration-300 hover:text-[var(--primary)] hover:scale-110 hover:rotate-[2deg] hover:translate-y-[-2px] [transform-style:preserve-3d] perspective-[800px]"
+          >
+            Performance
+          </a>
+          <a 
+            href="#testimonials" 
+            className="relative inline-block transition-all duration-300 hover:text-[var(--primary)] hover:scale-110 hover:rotate-[-3deg] hover:translate-y-[-3px] [transform-style:preserve-3d] perspective-[800px]"
+          >
+            Testimonials
+          </a>
+          <a 
+            href="#consultation" 
+            className="relative inline-block transition-all duration-300 hover:text-[var(--primary)] hover:scale-110 hover:rotate-[3deg] hover:translate-y-[-3px] [transform-style:preserve-3d] perspective-[800px]"
+          >
+            Consultation
+          </a>
         </div>
 
         {/* Desktop Button */}
@@ -91,12 +103,9 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-1.5"
         >
           <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
-
           <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
-
           <span className="w-6 h-0.5 bg-[var(--text)] rounded-full" />
         </button>
-
       </nav>
 
       {/* MOBILE OVERLAY */}
@@ -126,41 +135,33 @@ export default function Navbar() {
             >
               {/* Ambient Glow */}
               <div className="absolute -top-32 -right-24 w-80 h-80 rounded-full bg-[var(--primary)]/20 blur-[120px] pointer-events-none" />
-
               <div className="absolute bottom-0 -left-24 w-72 h-72 rounded-full bg-sky-400/10 blur-[120px] pointer-events-none" />
-
               <div className="absolute top-1/2 right-10 -translate-y-1/2 w-56 h-56 rounded-full bg-violet-500/10 blur-[100px] pointer-events-none" />
-              {/* TOP BAR */}
               
+              {/* TOP BAR */}
               <div className="relative z-10 flex items-center justify-between px-6 h-20 border-b border-white/10">
-
                 <h2 className="text-lg font-semibold text-[var(--text)]">
                   Menu
                 </h2>
-
-                {/* CLOSE BUTTON */}
                 <button
                   onClick={closeMenu}
                   className="text-3xl text-[var(--text)] leading-none"
                 >
                   ×
                 </button>
-
               </div>
 
               {/* MENU LINKS */}
               <div className="relative z-10 flex flex-col px-5 py-6 gap-3">
-
                 <a
                   href="#services"
                   onClick={closeMenu}
-                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10"
+                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10 hover:scale-105 hover:rotate-[-1deg] [transform-style:preserve-3d] perspective-[600px]"
                 >
-                  <span className="font-medium text-white">
+                  <span className="font-medium text-white transition-all duration-300 group-hover:scale-105 group-hover:translate-x-1">
                     Services
                   </span>
-
-                  <span className="text-xl text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-xl text-[var(--primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110 group-hover:rotate-12">
                     →
                   </span>
                 </a>
@@ -168,13 +169,12 @@ export default function Navbar() {
                 <a
                   href="#performance"
                   onClick={closeMenu}
-                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10"
+                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10 hover:scale-105 hover:rotate-[1deg] [transform-style:preserve-3d] perspective-[600px]"
                 >
-                  <span className="font-medium text-white">
+                  <span className="font-medium text-white transition-all duration-300 group-hover:scale-105 group-hover:translate-x-1">
                     Performance
                   </span>
-
-                  <span className="text-xl text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-xl text-[var(--primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110 group-hover:-rotate-12">
                     →
                   </span>
                 </a>
@@ -182,13 +182,12 @@ export default function Navbar() {
                 <a
                   href="#testimonials"
                   onClick={closeMenu}
-                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10"
+                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10 hover:scale-105 hover:rotate-[-2deg] [transform-style:preserve-3d] perspective-[600px]"
                 >
-                  <span className="font-medium text-white">
+                  <span className="font-medium text-white transition-all duration-300 group-hover:scale-105 group-hover:translate-x-1">
                     Testimonials
                   </span>
-
-                  <span className="text-xl text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-xl text-[var(--primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110 group-hover:rotate-12">
                     →
                   </span>
                 </a>
@@ -196,13 +195,12 @@ export default function Navbar() {
                 <a
                   href="#consultation"
                   onClick={closeMenu}
-                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10"
+                  className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.05] backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-[var(--primary)]/40 hover:bg-[var(--primary)]/10 hover:scale-105 hover:rotate-[2deg] [transform-style:preserve-3d] perspective-[600px]"
                 >
-                  <span className="font-medium text-white">
+                  <span className="font-medium text-white transition-all duration-300 group-hover:scale-105 group-hover:translate-x-1">
                     Consultation
                   </span>
-
-                  <span className="text-xl text-[var(--primary)] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-xl text-[var(--primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110 group-hover:-rotate-12">
                     →
                   </span>
                 </a>
@@ -210,18 +208,15 @@ export default function Navbar() {
                 <a
                   href="#consultation"
                   onClick={closeMenu}
-                  className="bg-[var(--primary)] text-black py-3 rounded-full font-medium text-center mt-4"
+                  className="bg-[var(--primary)] text-black py-3 rounded-full font-medium text-center mt-4 hover:scale-105 hover:rotate-[-1deg] transition-all duration-300 [transform-style:preserve-3d] perspective-[600px]"
                 >
                   Book Consultation
                 </a>
-
               </div>
-
             </motion.div>
           </>
         )}
       </AnimatePresence>
-
     </header>
   );
 }

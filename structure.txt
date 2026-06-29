@@ -1,0 +1,82 @@
+﻿APP
+Folder PATH listing
+Volume serial number is 0000023D 2CAF:FC7C
+C:\LOCAL_DISK_D\CRACK\PHYSIO\PHYSIOTHERAPIST-PLATFORM\APP
+|   favicon.ico
+|   globals.css
+|   layout.js
+|   page.js
+|   robots.js
+|   sitemap.js
+|   
++---api
+|   \---mail
+|           route.js
+|           
++---dashboard
+|   |   layout.js
+|   |   page.js
+|   |   
+|   +---appointments
+|   |       page.js
+|   |       
+|   +---gallery
+|   |       page.js
+|   |       
+|   +---packages
+|   |       page.js
+|   |       
+|   +---services
+|   |       page.js
+|   |       
+|   \---testimonials
+|           page.js
+|           
++---portal
+|       page.js
+|       
+\---test
+        page.js
+        
+
+COMPONENTS
+Folder PATH listing
+Volume serial number is 000001DE 2CAF:FC7C
+C:\LOCAL_DISK_D\CRACK\PHYSIO\PHYSIOTHERAPIST-PLATFORM\COMPONENTS
++---animations
+|       Floating.jsx
+|       PageTransition.jsx
+|       ParallaxGlow.jsx
+|       
++---footer
+|       Footer.jsx
+|       
++---gallery
+|       GalleryGrid.jsx
+|       GalleryModal.jsx
+|       UploadCard.jsx
+|       
++---Layout
+|       LayoutWrapper.jsx
+|       
++---navbar
+|       Navbar.jsx
+|       
++---sections
+|       About.jsx
+|       Consultation.jsx
+|       Gallery.jsx
+|       Packages.jsx
+|       Performance.jsx
+|       Services.jsx
+|       Testimonials.jsx
+|       
++---three
+|       Ball.jsx
+|       
+\---ui
+        Button.jsx
+        Container.jsx
+        SectionTitle.jsx
+        TiltCard.jsx
+        

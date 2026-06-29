@@ -71,7 +71,7 @@ export default function Home() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover md:object-center object-[40%_center] scale-105 animate-slowZoom"
+                  className="w-full h-full object-cover md:object-center object-[40%_center] scale-105"
                 >
                   <source
                     src="/videos/hero1.mp4"

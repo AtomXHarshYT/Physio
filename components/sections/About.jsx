@@ -2,6 +2,7 @@
 
 import Floating from "@/components/animations/Floating";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 export default function About() {
   return (
@@ -49,37 +50,78 @@ export default function About() {
               About Experience
             </p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold mt-4 md:mt-6 leading-[1.1]">
-              Modern Recovery Built Around Human Performance
-            </h2>
+            <div className="overflow-hidden mt-4 md:mt-6">
+              <motion.h2
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="text-2xl sm:text-3xl md:text-6xl font-bold leading-[1.1]"
+              >
+                Modern Recovery Built Around Human Performance
+              </motion.h2>
+            </div>
 
-            <p className="text-[var(--muted)] mt-4 md:mt-8 leading-relaxed text-sm sm:text-base md:text-lg">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-[var(--muted)] mt-4 md:mt-8 leading-relaxed text-sm sm:text-base md:text-lg"
+            >
               Combining physiotherapy, mobility systems, strength
               development, and recovery science into one futuristic
               performance experience designed for long-term results.
-            </p>
+            </motion.p>
 
             <div className="grid grid-cols-2 gap-4 md:gap-6 mt-8 md:mt-12">
 
-              <div className="border border-[var(--border)] rounded-2xl md:rounded-3xl p-4 md:p-6 bg-white/5">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--primary)]">
-                  5
+              <motion.div
+                whileHover={{
+                  y: -6,
+                  scale: 1.04,
+                }}
+                transition={{ duration: 0.25 }}
+                className="group border border-[var(--border)] rounded-2xl md:rounded-3xl p-4 md:p-6 bg-white/5 hover:bg-[var(--primary)]/10 hover:border-[var(--primary)] transition-all duration-300 cursor-pointer"
+              >
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--primary)] transition-transform duration-300 group-hover:scale-110">
+                  <CountUp
+                    start={0}
+                    end={5}
+                    duration={2}
+                    enableScrollSpy
+                    scrollSpyOnce
+                  />
                 </h3>
 
                 <p className="text-[var(--muted)] text-xs sm:text-sm md:text-base mt-1 md:mt-2">
                   Years Coaching
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="border border-[var(--border)] rounded-2xl md:rounded-3xl p-4 md:p-6 bg-white/5">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--accent)]">
-                  50+
+              <motion.div
+                whileHover={{
+                  y: -6,
+                  scale: 1.04,
+                }}
+                transition={{ duration: 0.25 }}
+                className="group border border-[var(--border)] rounded-2xl md:rounded-3xl p-4 md:p-6 bg-white/5 hover:bg-[var(--primary)]/10 hover:border-[var(--primary)] transition-all duration-300 cursor-pointer"
+              >
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--accent)] transition-transform duration-300 group-hover:scale-110">
+                  <CountUp
+                    start={0}
+                    end={50}
+                    duration={2}
+                    enableScrollSpy
+                    scrollSpyOnce
+                  />
+                  +
                 </h3>
 
                 <p className="text-[var(--muted)] text-xs sm:text-sm md:text-base mt-1 md:mt-2">
                   Elite Athletes
                 </p>
-              </div>
+              </motion.div>
 
             </div>
 
@@ -87,8 +129,8 @@ export default function About() {
 
         </div>
 
-      </div>
+      </div >
 
-    </section>
+    </section >
   );
 }

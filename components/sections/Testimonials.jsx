@@ -8,6 +8,7 @@ export default function Testimonials() {
 
   const [testimonials, setTestimonials] = useState([]);
   const [active, setActive] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
 
@@ -138,19 +139,54 @@ export default function Testimonials() {
                 delay: index * 0.1,
               }}
               viewport={{ once: true }}
-              className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8"
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              whileHover={{
+                scale: 1.02,
+                y: -8,
+                transition: {
+                  duration: 0.4,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }
+              }}
+              style={{
+                transformOrigin: "center center",
+              }}
+              className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8 transition-colors duration-300 cursor-pointer relative overflow-hidden group"
             >
+              {/* Apple-style hover glow effect */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: hoveredIndex === index ? 1 : 0,
+                }}
+                transition={{ duration: 0.6 }}
+                className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-[var(--primary)]/5 rounded-2xl md:rounded-3xl pointer-events-none"
+              />
+              
+              {/* Subtle border glow on hover */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: hoveredIndex === index ? 1 : 0,
+                }}
+                transition={{ duration: 0.6 }}
+                className="absolute inset-0 rounded-2xl md:rounded-3xl pointer-events-none"
+                style={{
+                  boxShadow: hoveredIndex === index ? '0 0 40px rgba(255,255,255,0.05), inset 0 0 40px rgba(255,255,255,0.02)' : 'none',
+                }}
+              />
 
               {/* Stars */}
-              <div className="flex gap-1 text-[var(--primary)] text-sm md:text-xl">
+              <div className="flex gap-1 text-[var(--primary)] text-sm md:text-xl relative z-10">
                 {"★".repeat(item.rating || 5)}
               </div>
 
-              <p className="text-[11px] sm:text-xs md:text-base text-[var(--text)] mt-3 md:mt-6 leading-relaxed">
+              <p className="text-[11px] sm:text-xs md:text-base text-[var(--text)] mt-3 md:mt-6 leading-relaxed relative z-10">
                 "{item.review}"
               </p>
 
-              <div className="mt-4 md:mt-8">
+              <div className="mt-4 md:mt-8 relative z-10">
 
                 <h3 className="font-semibold text-sm md:text-lg">
                   {item.name}

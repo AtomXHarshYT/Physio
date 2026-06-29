@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const stats = [
   {
@@ -35,25 +36,33 @@ export default function Performance() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="mb-8 md:mb-0"
           >
 
             <p className="text-[var(--primary)] uppercase tracking-[0.25em] text-[10px] sm:text-xs md:text-sm">
               Performance
             </p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold mt-4 md:mt-6 leading-[1.1]">
-              Built For Recovery, Strength & Elite Movement
-            </h2>
+            <div className="overflow-hidden mt-4 md:mt-6">
+              <motion.h2
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+                className="text-2xl sm:text-3xl md:text-6xl font-bold leading-[1.1]"
+              >
+                Built For Recovery, Strength & Elite Movement
+              </motion.h2>
+            </div>
 
             <p className="text-[var(--muted)] mt-4 md:mt-8 text-sm sm:text-base md:text-lg leading-relaxed">
               Advanced recovery systems and performance coaching
               designed to help athletes and individuals move,
               recover, and perform at their highest level.
             </p>
-
-            <button className="mt-6 md:mt-10 mb-8 md:mb-0 bg-[var(--primary)] text-[var(--background)] px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium hover:scale-105 transition duration-300">
-              Explore Programs
-            </button>
 
           </motion.div>
 
@@ -62,19 +71,37 @@ export default function Performance() {
 
             {stats.map((item, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.05,
+                  rotateX: 5,
+                  rotateY: 5,
+                }}
                 transition={{
-                  duration: 0.7,
-                  delay: index * 0.1,
+                  duration: 0.3,
                 }}
                 viewport={{ once: true }}
-                className="border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-10"
+                className="group border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-10 transition-all duration-300 hover:border-[var(--primary)] hover:bg-white/10 hover:shadow-[0_20px_60px_rgba(0,255,170,0.18)] cursor-pointer"
               >
 
-                <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--primary)]">
-                  {item.number}
+                <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--primary)] transition-all duration-300 group-hover:scale-110">
+                  {item.number.includes("%") ? (
+                    <>
+                      <CountUp end={95} duration={2.5} enableScrollSpy />%
+                    </>
+                  ) : item.number.includes("K+") ? (
+                    <>
+                      <CountUp end={1} duration={2.5} enableScrollSpy />K+
+                    </>
+                  ) : item.number.includes("+") ? (
+                    <>
+                      <CountUp end={12} duration={2.5} enableScrollSpy />+
+                    </>
+                  ) : (
+                    <>
+                      <CountUp end={24} duration={2.5} enableScrollSpy />/7
+                    </>
+                  )}
                 </h3>
 
                 <p className="text-[var(--muted)] mt-2 md:mt-4 text-xs sm:text-sm md:text-lg">
