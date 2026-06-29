@@ -144,9 +144,9 @@ export default function DashboardLayout({
 
           {/* LOGO */}
           <h1 className="text-xl font-bold">
-            Physio
+            ThriveFit
             <span className="text-[var(--primary)]">
-              X
+              Club
             </span>
           </h1>
 
@@ -190,9 +190,9 @@ export default function DashboardLayout({
             <div>
 
               <h1 className="text-3xl font-bold">
-                Physio
+                ThriveFit
                 <span className="text-[var(--primary)]">
-                  X
+                  Club
                 </span>
               </h1>
 
