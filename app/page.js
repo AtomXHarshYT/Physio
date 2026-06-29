@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion";
+import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import Services from "@/components/sections/Services";
 import Performance from "@/components/sections/Performance";
@@ -13,12 +14,37 @@ import PageTransition from "@/components/animations/PageTransition";
 import Button from "@/components/ui/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/effect-fade";
 
 export const dynamic = "force-dynamic";
 export default function Home() {
+  const [recoveries, setRecoveries] = useState(0);
+  const [experience, setExperience] = useState(0);
+
+  useEffect(() => {
+    const controls1 = animate(0, 500, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate(value) {
+        setRecoveries(Math.floor(value));
+      },
+    });
+
+    const controls2 = animate(0, 4, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate(value) {
+        setExperience(Math.floor(value));
+      },
+    });
+
+    return () => {
+      controls1.stop();
+      controls2.stop();
+    };
+  }, []);
+  const title = "Transform Your Body With Futuristic Physiotherapy";
   return (
     <PageTransition>
       <main className="min-h-screen text-[var(--text)] relative overflow-hidden">
@@ -87,7 +113,7 @@ export default function Home() {
             </Swiper>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50 z-10" />
+            <div className="absolute inset-0 bg-black/60 md:bg-black/55 z-10" />
 
           </div>
           <Container className="relative z-20">
@@ -102,9 +128,21 @@ export default function Home() {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{
+                opacity: 0,
+                clipPath: "inset(0 100% 0 0)",
+                filter: "blur(4px)",
+              }}
+              animate={{
+                opacity: 1,
+                clipPath: "inset(0 0% 0 0)",
+                filter: "blur(0px)",
+              }}
+              transition={{
+                duration: 3.5,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-5xl"
             >
               Transform Your Body With Futuristic Physiotherapy
@@ -114,7 +152,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-[var(--muted)] text-lg mt-8 max-w-2xl leading-relaxed"
+              className="text-white/90 text-lg mt-8 max-w-2xl leading-relaxed drop-shadow-md"
             >
               Premium sports rehab, mobility coaching, injury recovery,
               and performance optimization built for modern athletes.
@@ -148,20 +186,20 @@ export default function Home() {
 
               <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
                 <h2 className="text-2xl md:text-4xl font-bold text-[var(--primary)]">
-                  500+
+                  {recoveries}+
                 </h2>
 
-                <p className="text-[var(--muted)] text-sm md:text-base mt-1 md:mt-2">
+                <p className="text-white/85 text-sm md:text-base mt-1 md:mt-2">
                   Successful Recoveries
                 </p>
               </div>
 
               <div className="border border-[var(--border)] bg-white/5 rounded-2xl md:rounded-3xl p-4 md:p-8 mb-16 md:mb-24">
                 <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
-                  4+
+                  {experience}+
                 </h2>
 
-                <p className="text-[var(--muted)] text-sm md:text-base mt-1 md:mt-2">
+                <p className="text-white/85 text-sm md:text-base mt-1 md:mt-2">
                   Years Experience
                 </p>
               </div>
