@@ -95,7 +95,7 @@ export default function Footer() {
 
               <p>trainedbysunny24@gmail.com</p>
 
-              <p>+91 97337505508</p>
+              <p>+91 9737505508</p>
 
               <p>Ahmedabad, Gujarat</p>
 
