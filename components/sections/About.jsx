@@ -1,10 +1,25 @@
 "use client";
 
-import Floating from "@/components/animations/Floating";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const images = [
+    "/about/about1.jpeg",
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="py-14 md:py-32 relative overflow-hidden">
 
@@ -21,21 +36,32 @@ export default function About() {
             className="relative"
           >
 
-            <Floating>
-              <div className="aspect-square rounded-3xl md:rounded-[40px] border border-[var(--border)] bg-white/5 backdrop-blur-xl overflow-hidden p-4 md:p-8">
 
-                <div className="w-full h-full rounded-2xl md:rounded-[30px] bg-linear-to-br from-[var(--primary)]/20 to-[var(--accent)]/20 flex items-center justify-center">
+            <div className="aspect-square rounded-3xl md:rounded-[40px] border border-[var(--border)] bg-white/5 backdrop-blur-xl overflow-hidden p-4 md:p-8">
 
-                  <div className="w-24 h-24 md:w-40 md:h-40 rounded-full bg-[var(--primary)]/5 backdrop-blur-3xl flex items-center justify-center animate-pulse">
-
-                    <div className="w-10 h-10 md:w-20 md:h-20 rounded-full bg-[var(--primary)]" />
-
-                  </div>
-
-                </div>
-
+              <div className="relative w-full h-full rounded-2xl md:rounded-[30px] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImage}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={images[currentImage]}
+                      alt="Clinic"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
-            </Floating>
+
+            </div>
+
           </motion.div>
 
           {/* Right Content */}
