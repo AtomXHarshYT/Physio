@@ -10,6 +10,7 @@ import Image from "next/image";
 
 export default function Services() {
   const [services, setServices] = useState([]);
+  const [flippedCard, setFlippedCard] = useState(null);
 
   useEffect(() => {
     fetchServices();
@@ -35,7 +36,7 @@ export default function Services() {
         />
 
         <motion.div
-          className="grid grid-cols-2 gap-4 md:gap-8 mt-14 md:mt-20"
+          className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 mt-14 md:mt-20"
           initial="hidden"
           animate="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -74,7 +75,7 @@ export default function Services() {
               }}
             >
               <TiltCard
-                className="group border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8 hover:border-[var(--primary)]/60 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden"
+                className="group border border-[var(--border)] bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-1 md:p-8 hover:border-[var(--primary)]/60 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden"
               >
                 {/* Animated gradient background on hover */}
                 <motion.div
@@ -91,26 +92,84 @@ export default function Services() {
                     ease: "easeInOut"
                   }}
                 />
+                {/* Mobile Card */}
+                <div className="md:hidden relative h-48 rounded-2xl overflow-hidden">
 
-                <div className="flex items-start gap-4">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="100vw"
+                    className="object-contain"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={false}
+                    animate={{ rotateY: flippedCard === index ? 180 : 0 }}
+                    transition={{ duration: 0.6 }}
+                    style={{ transformStyle: "preserve-3d" }}
+                  >
+
+                    {/* FRONT */}
+                    <div
+                      className="absolute inset-0 flex items-end justify-between p-2.5"
+                      style={{ backfaceVisibility: "hidden" }}
+                      onClick={() => setFlippedCard(index)}
+                    >
+                      <h3 className="text-white text-base font-semibold leading-tight">
+                        {service.title}
+                      </h3>
+
+                      <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white">
+                        →
+                      </div>
+                    </div>
+
+                    {/* BACK */}
+                    <div
+                      className="absolute inset-0 bg-black/90 p-5 flex flex-col justify-between"
+                      style={{
+                        transform: "rotateY(180deg)",
+                        backfaceVisibility: "hidden",
+                      }}
+                      onClick={() => setFlippedCard(null)}
+                    >
+                      <div>
+                        <h3 className="text-white text-base font-semibold leading-tight">
+                          {service.title}
+                        </h3>
+
+                        <p className="text-[11px] md:text-base text-white/80 mt-2 leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+
+                  </motion.div>
+
+                </div>
+                <div className="hidden md:flex md:flex-col">
 
                   {/* Service Image */}
                   <motion.div
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.3 }}
-                    className="relative w-14 h-14 md:w-20 md:h-20 rounded-xl overflow-hidden shrink-0"
+                    className="relative w-full h-64 rounded-2xl overflow-hidden"
                   >
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="(max-width: 768px) 56px, 80px"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover"
                     />
                   </motion.div>
 
                   {/* Text */}
-                  <div className="flex-1">
+                  <div className="mt-5">
 
                     <motion.h3
                       className="text-sm sm:text-base md:text-2xl font-semibold leading-tight group-hover:text-[var(--primary)] transition-colors duration-300"
